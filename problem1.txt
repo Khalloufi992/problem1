@@ -1,0 +1,50 @@
+Algorithm SumOfDistinctElements
+
+Variables
+    Set1 : array = [3, 1, 7, 9]
+    Set2 : array = [2, 4, 1, 9, 3]
+    sum : integer ← 0
+    i, j : integer
+    found : boolean
+
+Begin
+
+// Step 1: Check elements of Set1
+For i ← 0 to length(Set1) - 1 do
+
+    found ← false
+
+    For j ← 0 to length(Set2) - 1 do
+        If Set1[i] = Set2[j] then
+            found ← true
+        EndIf
+    EndFor
+
+    If found = false then
+        sum ← sum + Set1[i]
+    EndIf
+
+EndFor
+
+
+// Step 2: Check elements of Set2
+For i ← 0 to length(Set2) - 1 do
+
+    found ← false
+
+    For j ← 0 to length(Set1) - 1 do
+        If Set2[i] = Set1[j] then
+            found ← true
+        EndIf
+    EndFor
+
+    If found = false then
+        sum ← sum + Set2[i]
+    EndIf
+
+EndFor
+
+// Output result
+Print sum
+
+End
