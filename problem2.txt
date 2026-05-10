@@ -1,0 +1,34 @@
+Algorithm OrthogonalityCheckFunction
+
+Variables
+    nPairs, n, i, j, ps : integer
+    v1, v2 : array
+
+Begin
+
+Read nPairs
+
+For i ← 1 to nPairs do
+
+    Read n
+    Declare v1[n], v2[n]
+
+    For j ← 0 to n-1 do
+        Read v1[j]
+    EndFor
+
+    For j ← 0 to n-1 do
+        Read v2[j]
+    EndFor
+
+    ps ← dot_product(v1, v2, n)
+
+    If ps = 0 then
+        Print "Orthogonal"
+    Else
+        Print "Not Orthogonal"
+    EndIf
+
+EndFor
+
+End
